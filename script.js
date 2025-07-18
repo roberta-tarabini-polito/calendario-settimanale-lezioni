@@ -19,22 +19,38 @@ class CalendarApp {
     generateCalendarGrid() {
         const grid = document.getElementById('calendarGrid');
         const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-        const hours = [16, 17, 18, 19, 20, 21]; // 16-22 (21:xx slot è l'ultimo)
+        const timeSlots = [
+            { hour: 16, label: '16:00-17:00', duration: '1h' },
+            { hour: 17, label: '17:00-18:00', duration: '1h' },
+            { hour: 18, label: '18:00-19:00', duration: '1h' },
+            { hour: 19, label: '19:00-20:00', duration: '1h' },
+            { hour: 20, label: '20:00-21:00', duration: '1h' },
+            { hour: 20.5, label: '20:30-21:30', duration: '1h' },
+            { hour: 21, label: '21:00-22:00', duration: '1h' }
+        ];
 
-        for (let hour = 0; hour < hours.length; hour++) {
+        for (let timeIndex = 0; timeIndex < timeSlots.length; timeIndex++) {
+            const timeSlot = timeSlots[timeIndex];
+            
             // Time column
-            const timeSlot = document.createElement('div');
-            timeSlot.className = 'time-slot';
-            timeSlot.textContent = `${hours[hour]}:00`;
-            grid.appendChild(timeSlot);
+            const timeSlotElement = document.createElement('div');
+            timeSlotElement.className = 'time-slot';
+            timeSlotElement.innerHTML = `<div class="time-label">${timeSlot.label}</div><div class="time-duration">${timeSlot.duration}</div>`;
+            grid.appendChild(timeSlotElement);
 
             // Day slots
             for (let day = 0; day < days.length; day++) {
                 const daySlot = document.createElement('div');
                 daySlot.className = 'day-slot';
                 daySlot.dataset.day = days[day];
-                daySlot.dataset.hour = hours[hour];
-                daySlot.dataset.slotId = `${days[day]}-${hours[hour]}`;
+                daySlot.dataset.hour = timeSlot.hour;
+                daySlot.dataset.slotId = `${days[day]}-${timeSlot.hour}`;
+                
+                // Add special class for the 20:30-21:30 slot
+                if (timeSlot.hour === 20.5) {
+                    daySlot.classList.add('special-slot');
+                }
+                
                 grid.appendChild(daySlot);
             }
         }
