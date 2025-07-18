@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Settimanale - Lezioni</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Calendario Settimanale Lezioni</h1>
+            <div class="controls">
+                <button id="addLessonBtn" class="btn btn-primary">+ Aggiungi Lezione</button>
+                <button id="clearAllBtn" class="btn btn-danger">🗑️ Cancella Tutto</button>
+            </div>
+        </header>
+
+        <div class="calendar-container">
+            <!-- Header giorni -->
+            <div class="calendar-header">
+                <div class="time-column"></div>
+                <div class="day-header">Lunedì</div>
+                <div class="day-header">Martedì</div>
+                <div class="day-header">Mercoledì</div>
+                <div class="day-header">Giovedì</div>
+                <div class="day-header">Venerdì</div>
+            </div>
+
+            <!-- Griglia calendario -->
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- Gli slot orari verranno generati dinamicamente -->
+            </div>
+        </div>
+
+        <!-- Pannello laterale con lezioni disponibili -->
+        <div class="lesson-panel">
+            <h3>📚 Aggiungi Nuova Lezione</h3>
+            <div class="lesson-form">
+                <input type="text" id="lessonTitle" placeholder="Titolo lezione" maxlength="30">
+                <input type="text" id="lessonStudent" placeholder="Nome studente" maxlength="20">
+                <select id="lessonColor">
+                    <option value="blue">🔵 Blu</option>
+                    <option value="green">🟢 Verde</option>
+                    <option value="orange">🟠 Arancione</option>
+                    <option value="purple">🟣 Viola</option>
+                    <option value="brown">🟤 Marrone</option>
+                    <option value="pink">🩷 Rosa</option>
+                    <option value="yellow">🟡 Giallo</option>
+                </select>
+                <button id="createLessonBtn" class="btn btn-success">Crea Blocco Lezione</button>
+            </div>
+            
+            <div class="available-lessons" id="availableLessons">
+                <h4>📋 Lezioni Create</h4>
+                <p class="help-text">Trascina i blocchi nel calendario per programmare le lezioni</p>
+                <p class="help-text">💡 Trascina le lezioni dal calendario qui per rimuoverle</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per modificare lezioni -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>✏️ Modifica Lezione</h3>
+            <div class="modal-form">
+                <input type="text" id="editTitle" placeholder="Titolo lezione">
+                <input type="text" id="editStudent" placeholder="Nome studente">
+                <select id="editColor">
+                    <option value="blue">🔵 Blu</option>
+                    <option value="green">🟢 Verde</option>
+                    <option value="orange">🟠 Arancione</option>
+                    <option value="purple">🟣 Viola</option>
+                    <option value="brown">🟤 Marrone</option>
+                    <option value="pink">🩷 Rosa</option>
+                    <option value="yellow">🟡 Giallo</option>
+                </select>
+                <div class="modal-buttons">
+                    <button id="saveChangesBtn" class="btn btn-primary">💾 Salva</button>
+                    <button id="deleteLessonBtn" class="btn btn-danger">🗑️ Elimina</button>
+                    <button id="cancelEditBtn" class="btn btn-secondary">❌ Annulla</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
