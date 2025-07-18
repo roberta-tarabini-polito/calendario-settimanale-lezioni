@@ -46,11 +46,6 @@ class CalendarApp {
                 daySlot.dataset.hour = timeSlot.hour;
                 daySlot.dataset.slotId = `${days[day]}-${timeSlot.hour}`;
                 
-                // Add special class for the 20:30-21:30 slot
-                if (timeSlot.hour === 20.5) {
-                    daySlot.classList.add('special-slot');
-                }
-                
                 grid.appendChild(daySlot);
             }
         }

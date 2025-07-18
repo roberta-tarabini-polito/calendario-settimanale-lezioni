@@ -150,11 +150,6 @@ h1 {
     font-weight: 400;
 }
 
-.special-slot {
-    background: #fef5e7;
-    border: 2px solid #fbd38d;
-}
-
 .day-slot {
     border-right: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
