@@ -1,6 +1,6 @@
-# 📅 Calendario Settimanale - Gestione Lezioni
+# 📅 Calendario Settimanale - Gestione Lezioni ASD
 
-Un'applicazione web moderna e intuitiva per gestire lezioni settimanali da lunedì a venerdì, dalle 16:00 alle 22:00.
+Un'applicazione web moderna e intuitiva per gestire lezioni settimanali da lunedì a venerdì della mia ASD aikido academy, dalle 16:00 alle 22:00.
 
 ## 🚀 Caratteristiche
 
@@ -37,12 +37,12 @@ Un'applicazione web moderna e intuitiva per gestire lezioni settimanali da luned
 
 ## 🎨 Codici colore
 
-- 🔵 **Blu**: Matematica, Scienze
-- 🟢 **Verde**: Lingue, Letteratura  
-- 🟠 **Arancione**: Storia, Geografia
-- 🟣 **Viola**: Arte, Musica
-- 🔴 **Rosso**: Recupero, Esami
-- 🩷 **Rosa**: Lezioni speciali
+- 🔵 **Blu**
+- 🟢 **Verde** 
+- 🟠 **Arancione**
+- 🟣 **Viola**
+- 🔴 **Rosso**
+- 🩷 **Rosa**
 
 ## 💾 Salvataggio
 
